@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
   # GET /tweets or /tweets.json
   def index
     @tweets = Tweet.all
-    @pagy, @tweets = pagy(@tweets)
+    @pagy, @tweets = pagy(Tweet.all)
   end
 
   # GET /tweets/1 or /tweets/1.json
