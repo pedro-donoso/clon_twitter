@@ -12,3 +12,5 @@
 </div>
 
 <%= link_to "New tweet", new_tweet_path %>
+
+<%== pagy_nav(@pagy) if @pagy.pages > 1%>
