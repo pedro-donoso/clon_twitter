@@ -1,3 +1,4 @@
+![Captura desde 2023-08-14 18-28-22](https://github.com/pedro-donoso/clon_twitter/assets/68760595/69f71e4f-83f7-4883-9dd8-5c90d682e0b7)
 ### PROCESO
 1) abrir terminal ubuntu, dentro de la carpeta principal BootcampROR
 
