@@ -186,7 +186,6 @@ rails s
 34) PAGY FUNCIONANDO
 FALTA AGREGAR ESTILOS
 
-
 35) agrego ID a indice 
 _tweet.html.erb
 
@@ -213,7 +212,7 @@ abajo de dom_id tweet
 
 40) agrego initializer de pagy
 config -> initializers 
-copiar documentación de github
+copiar documentaci√≥n de github
 crear archivo pagy.rb
 y pegar initializer de pagy
 
@@ -231,7 +230,7 @@ terminal rails server -> rails s
 
 views -> tweets -> index-html.erb
 
-aplico formato segun documentación
+aplico formato segun documentaci√≥n
 pagy_bootstrap_nav
 
 44) renderizar solo 10 tweets
@@ -240,3 +239,26 @@ en initializer pagy.rb
 cambiar 20 por defecto a 10 desactivando comentario
 
 reiniciar rails s para aplicar
+
+45) creo buscador
+eligo un navbar con buscador de bootstrap
+
+en views -> creo carpeta shared -> creo archivo _navbar.html.erb
+
+46) pegar render en application
+views -> layouts -> application.html.erb
+
+sobre container
+
+<%= render 'shared/navbar' %>
+
+47) envio calamar new tweet a navbar y lo edito
+
+48) agrego validacion desde backend (model)
+bajo ApplicationRecord
+
+49) agrego gema ransack
+Gemfile
+gem 'ransack'
+
+terminal -> bundle
