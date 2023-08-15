@@ -183,4 +183,58 @@ rails s
 
 34) PAGY FUNCIONANDO
 FALTA AGREGAR ESTILOS
-...
+
+
+35) agrego ID a indice 
+_tweet.html.erb
+
+36) agrego cdn para estilo css bootstrap en:
+application.html.erb
+
+sobre </head>
+
+cdn js bootstrap
+sobre </body>
+
+37) agrego contenedor en html
+application.html.erb
+
+38) edito la vista _tweet.html.erb
+
+views -> tweets
+
+agrego card bootstrap
+
+abajo de dom_id tweet
+
+39) copio datos especificos del pagina 1 tweet y los agrego a pagina principal de todos
+
+40) agrego initializer de pagy
+config -> initializers 
+copiar documentación de github
+crear archivo pagy.rb
+y pegar initializer de pagy
+
+41) activar navegacion de bootstrap
+buscar en archivo pagy.rb
+"bootstrap"
+
+y descomento extras de bootstrap
+
+42) detener el servidor y volver a correr, cada vez que se modifica un archivo initializer
+
+terminal rails server -> rails s
+
+43) editar vista index para aplicar estilo de paginacion de bootstrap
+
+views -> tweets -> index-html.erb
+
+aplico formato segun documentación
+pagy_bootstrap_nav
+
+44) renderizar solo 10 tweets
+en initializer pagy.rb
+
+cambiar 20 por defecto a 10 desactivando comentario
+
+reiniciar rails s para aplicar
