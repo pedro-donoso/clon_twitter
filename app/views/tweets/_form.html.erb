@@ -11,29 +11,18 @@
     </div>
   <% end %>
 
-
-
-  <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-</div>
 <div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <label for="exampleFormControlTextarea1" class="form-label">Descripción:</label>
+   <%= form.text_area :description, class:"form-control", rows:"3" %>
 </div>
+  <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Nombre de usuario:</label>
+    <%= form.text_field :userName, class: "form-control", placeholder: "Ingresa tu nombre..." %>
+</div>
+
   <button type="submit" class="btn btn-primary">Submit</button>
 
 
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.label :userName, style: "display: block" %>
-    <%= form.text_field :userName %>
-  </div>
 
   <div>
     <%= form.submit %>
