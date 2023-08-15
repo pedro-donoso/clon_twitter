@@ -6,22 +6,13 @@
 
 <div id="tweets">
   <% @tweets.each do |tweet| %>
-
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-
-      <%= link_to "Show this tweet", tweet, class: "btn btn-primary" %>
+    <h5 class="card-title"><%= tweet.userName %></h5>
+    <p class="card-text"><%= tweet.description %></p>
+    <%= link_to "Ver tweet", tweet, class: "btn btn-primary" %>
   </div>
 </div>
-
-    <%= render tweet %>
-    <p>
-
-    </p>
   <% end %>
 </div>
-
-
 <%== pagy_nav(@pagy) if @pagy.pages > 1%>
