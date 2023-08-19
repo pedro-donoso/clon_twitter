@@ -132,7 +132,7 @@ GEM
     pagy (6.0.4)
     pg (1.5.3)
     public_suffix (5.0.3)
-    puma (5.6.6)
+    puma (5.6.7)
       nio4r (~> 2.0)
     racc (1.7.1)
     rack (2.2.8)
@@ -226,7 +226,7 @@ DEPENDENCIES
   jbuilder
   pagy
   pg (~> 1.1)
-  puma (~> 5.0)
+  puma (~> 5.6)
   rails (~> 7.0.7)
   ransack
   selenium-webdriver
