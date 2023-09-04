@@ -289,7 +289,7 @@ copio datos especificos del pagina 1 tweet y los agrego a pagina principal de to
     
 config -> initializers 
 
-copiar documentaci√≥n de github
+copiar documentación de github
 
 crear archivo pagy.rb
 y pegar initializer de pagy
