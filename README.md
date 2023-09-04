@@ -2,7 +2,7 @@
 
 
 ### PROCESO
-1) abrir terminal ubuntu, dentro de la carpeta principal BootcampROR:
+1) Abrir terminal ubuntu, dentro de la carpeta principal BootcampROR:
 
 ```bash
 ls
@@ -11,13 +11,13 @@ ls
 cd BootcampROR
 ```
 
-2) crear proyecto rails con base de datos postgresql:
+2) Crear proyecto rails con base de datos postgresql:
 
 ```bash
 rails new clon_twitter -d postgresql
 ```
 
-3) ingresar al nuevo proyecto creado:
+3) Ingresar al nuevo proyecto creado:
 
 ```bash
 ls
@@ -26,7 +26,7 @@ ls
 cd clon-twitter
 ```
 
-4) hacer commmit:
+4) Crear commmit:
 
 ```bash
 git add .
@@ -35,31 +35,31 @@ git add .
 git commit -m "primer commit"
 ```
 
-5) abrir vscode y cerrar terminal ubuntu:
+5) Abrir vscode y cerrar terminal ubuntu:
 
 ```bash
 code .
 ```
 
-7) crear repositorio en github:
+7) Crear repositorio en github:
 
 ```bash
 git init
 ```
 
-8) inicializar postgresql desde terminal vscode y dejar corriendo (renombrar a terminal postgresql):
+8) Inicializar postgresql desde terminal vscode y dejar corriendo (renombrar a terminal postgresql):
 
 ```bash
 sudo service postgresql start
 ```
 
-9) abrir terminal 2 en vscode y generar base de datos (renombrar a terminal rails server):
+9) Abrir terminal 2 en vscode y generar base de datos (renombrar a terminal rails server):
 
 ```bash
 rails db:create
 ```
 
-10) consideraciones scaffold: 
+10) Consideraciones scaffold: 
 - modelo (Primera letra Mayusculas y palabra en singular)
 
 - atributos del modelo (clave:valor)
@@ -72,21 +72,21 @@ rails g scaffold Tweet description:text
 
 - userName (si no se define es string)
 
-10) revisar carpeta migrate:
+10) Revisar carpeta migrate:
 se genera en la carpeta db, debe contener el formato asignado al scaffold
 
-11) genero la migracion
+11) Genero la migracion:
     
 ```bash
 rails db:migrate
 ```
 
-12) revisar routes:
+12) Revisar routes:
     
 en config -> routes
 debe aparecer resources con modelo en minuscula y plural, tweets
 
-14) definir root:
+14) Definir root:
     
 en routes descomentar y cambiar articles, dejar modelo generado en plural
 root "tweets#index"
@@ -129,7 +129,7 @@ guardar
 21) Instalar gema, desde terminal 3 ejecutar:
 bundle
 
-22)agregar contenido al seed
+22) Agregar contenido al seed
 en carpeta bd -> seeds.rb
 
 al final del archivo agregar texto:
@@ -139,76 +139,98 @@ escribir accion y logica aqui
 
 guardar
 
-23) revisar en carpeta migrate los nombres clave: valor asignados
+23) Revisar en carpeta migrate los nombres clave: valor asignados
 
 escribirlos igual en la logica del archivo seeds creado con la fecha 2023...
 
-24) actualizo el seeds.rb
+24) Actualizo el seeds.rb
 rails db:seed
 
-aparecera el mensaje por consola creado
+aparecerá el mensaje por consola creado
 Creating tweets...
 
-24) revisar funcionamiento app
+24) Revisar funcionamiento app
 localhost:3000
 
-25) modificar cantidad de tweets a 500
+25) Modificar cantidad de tweets a 500:
+    
 en seeds.rb
 
 10.times do
 
 detener rails server
+```bash
 ctrl c
+```
 
-26) al cambiar la cantidad de datos a 500 debemos resetear la base de datos, desde terminal ejecutar:
+26) Al cambiar la cantidad de datos a 500 debemos resetear la base de datos, desde terminal ejecutar:
 
+```bash
 rails db:reset
+```
 
-27) volver a correr servidor de rails, desde terminal rails server, ejecutar:
+27) Volver a correr servidor de rails desde terminal rails server, ejecutar:
 
+```bash
 rails s
+```
 
-28) realizo commit de la app funcionando
+28) Realizo commit de la app funcionando:
+    
 desde termina ejecutar:
 
+```bash
 git add .
+```
+
+```bash
 git commit -m "feat: Faker"
+```
 
-29) agrego paginacion con gem pagy
-ir al archivo Gemfile y editar al final donde agrego mis gemas agregadas
-guardar cambios Gemfile
+29) Agrego paginacion con gem pagy:
+    
+- Ir al archivo Gemfile y editar al final donde agrego mis gemas agregadas
 
-ejecutar bundle para agregar gema
+- Guardar cambios Gemfile
+
+- Ejecutar bundle para agregar gema
+
+```bash
 bundle
+```
 
-30) incluir pagy en controller
-buscar controller -> ctrl p
+30) Incluir pagy en controller:
+    
+- buscar controller -> ctrl p
 
-application_controller.rb editar:
+- application_controller.rb editar:
 
 incluir bajo Class
 
 	include Pagy::Backend
 
-guardar cambios
+- guardar cambios
 
-31)incluir pagy en application_helper.rb
-buscar controller -> ctrl p
+31) Incluir pagy en application_helper.rb
+    
+- Buscar controller -> ctrl p
 
-incluir bajo module
+- Incluir bajo module
 
 	include Pagy::Frontend
 
 esto afectara a toda la app
 
-32) cambiar en vista index
+32) Cambiar en vista index:
+    
 ctrl p -> tweets_controller.rb
 
 incluir bajo @tweets = Tweet.all (comentar esta linea) #
 
  @pagy, @tweets = pagy(Tweet.all)
 
-33) agregar helpers adicionales
+33) Agregar helpers adicionales:
+    
 views -> tweets -> index.html.erb
 
 pegar al final del archivo
@@ -217,18 +239,20 @@ pegar al final del archivo
 
 guardar archivo
 
-33) reiniciar desde terminal rails server para ver funcionamiento de pagy
+33) Reiniciar desde terminal rails server para ver funcionamiento de pagy:
 
 ctrl c
 rails s
 
-34) PAGY FUNCIONANDO
+34) Pagy funcionando:
+    
 FALTA AGREGAR ESTILOS
 
-35) agrego ID a indice 
+36) Agrego ID a indice 
 _tweet.html.erb
 
-36) agrego cdn para estilo css bootstrap en:
+37) Agrego cdn para estilo css bootstrap en:
+    
 application.html.erb
 
 sobre </head>
@@ -236,10 +260,11 @@ sobre </head>
 cdn js bootstrap
 sobre </body>
 
-37) agrego contenedor en html
+37) Agrego contenedor en html:
+    
 application.html.erb
 
-38) edito la vista _tweet.html.erb
+39) Edito la vista _tweet.html.erb:
 
 views -> tweets
 
@@ -247,53 +272,65 @@ agrego card bootstrap
 
 abajo de dom_id tweet
 
-39) copio datos especificos del pagina 1 tweet y los agrego a pagina principal de todos
+copio datos especificos del pagina 1 tweet y los agrego a pagina principal de todos
 
-40) agrego initializer de pagy
+40) Agrego initializer de pagy:
+    
 config -> initializers 
+
 copiar documentaci√≥n de github
+
 crear archivo pagy.rb
 y pegar initializer de pagy
 
-41) activar navegacion de bootstrap
+42) Activar navegacion de bootstrap:
+    
 buscar en archivo pagy.rb
 "bootstrap"
 
 y descomento extras de bootstrap
 
-42) detener el servidor y volver a correr, cada vez que se modifica un archivo initializer
+42) Detener el servidor y volver a correr, cada vez que se modifica un archivo initializer
 
-terminal rails server -> rails s
+terminal rails server
 
-43) editar vista index para aplicar estilo de paginacion de bootstrap
+```bash
+rails s
+```
+
+43) Editar vista index para aplicar estilo de paginacion de bootstrap:
 
 views -> tweets -> index-html.erb
 
-aplico formato segun documentaci√≥n
+aplico formato segun documentación
 pagy_bootstrap_nav
 
-44) renderizar solo 10 tweets
+44) Renderizar solo 10 tweets:
+    
 en initializer pagy.rb
 
 cambiar 20 por defecto a 10 desactivando comentario
 
 reiniciar rails s para aplicar
 
-45) creo buscador
+45) Creo buscador:
+    
 eligo un navbar con buscador de bootstrap
 
 en views -> creo carpeta shared -> creo archivo _navbar.html.erb
 
-46) pegar render en application
+46) Pegar render en application:
+    
 views -> layouts -> application.html.erb
 
 sobre container
 
 <%= render 'shared/navbar' %>
 
-47) envio calamar new tweet a navbar y lo edito
+Envío calamar new tweet a navbar y lo edito
 
-48) agrego validacion desde backend (model)
+Agrego validacion desde backend (model)
+    
 bajo ApplicationRecord
 
 49) agrego gema ransack
