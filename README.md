@@ -72,41 +72,41 @@ rails g scaffold Tweet description:text
 
 - userName (si no se define es string)
 
-10) Revisar carpeta migrate:
-se genera en la carpeta db, debe contener el formato asignado al scaffold
+11) Revisar carpeta migrate:
+- se genera en la carpeta db, debe contener el formato asignado al scaffold
 
-11) Genero la migracion:
+12) Genero la migracion:
     
 ```bash
 rails db:migrate
 ```
 
-12) Revisar routes:
+13) Revisar routes:
     
-en config -> routes
+- en config -> routes
 debe aparecer resources con modelo en minuscula y plural, tweets
 
 14) Definir root:
     
-en routes descomentar y cambiar articles, dejar modelo generado en plural
+- en routes descomentar y cambiar articles, dejar modelo generado en plural
 root "tweets#index"
 guardar
 
-16) Dejar corriendo servidor de rails desde terminal 2 y revisar sitio web:
+15) Dejar corriendo servidor de rails desde terminal 2 y revisar sitio web:
     
 ```bash
 rails s
 ```
 
-localhost 3000
+- localhost 3000
 
-18) Revisar controllers:
+16) Revisar controllers:
     
 en app -> controllers
 aparece controller creado
 tweets_controller.rb
 
-19) Abrir terminal 3 (renombrar a terminal) y commitear:
+17) Abrir terminal 3 (renombrar a terminal) y commitear:
     
 ```bash
 git add.
@@ -116,9 +116,9 @@ git add.
 git commit -m "mensaje"
 ```
 
-sync changes o git pull
+- sync changes o git pull
 
-20) Generar datos con gema faker:
+18) Generar datos con gema faker:
 en gemfile agregar al final comentario
 
 #Gemas agregadas por mi
@@ -126,10 +126,10 @@ gem 'faker'
 
 guardar
 
-21) Instalar gema, desde terminal 3 ejecutar:
+19) Instalar gema, desde terminal 3 ejecutar:
 bundle
 
-22) Agregar contenido al seed
+20) Agregar contenido al seed
 en carpeta bd -> seeds.rb
 
 al final del archivo agregar texto:
@@ -139,20 +139,20 @@ escribir accion y logica aqui
 
 guardar
 
-23) Revisar en carpeta migrate los nombres clave: valor asignados
+21) Revisar en carpeta migrate los nombres clave: valor asignados
 
 escribirlos igual en la logica del archivo seeds creado con la fecha 2023...
 
-24) Actualizo el seeds.rb
+22) Actualizo el seeds.rb
 rails db:seed
 
 aparecerá el mensaje por consola creado
 Creating tweets...
 
-24) Revisar funcionamiento app
+23) Revisar funcionamiento app
 localhost:3000
 
-25) Modificar cantidad de tweets a 500:
+24) Modificar cantidad de tweets a 500:
     
 en seeds.rb
 
@@ -163,19 +163,19 @@ detener rails server
 ctrl c
 ```
 
-26) Al cambiar la cantidad de datos a 500 debemos resetear la base de datos, desde terminal ejecutar:
+25) Al cambiar la cantidad de datos a 500 debemos resetear la base de datos, desde terminal ejecutar:
 
 ```bash
 rails db:reset
 ```
 
-27) Volver a correr servidor de rails desde terminal rails server, ejecutar:
+26) Volver a correr servidor de rails desde terminal rails server, ejecutar:
 
 ```bash
 rails s
 ```
 
-28) Realizo commit de la app funcionando:
+27) Realizo commit de la app funcionando:
     
 desde termina ejecutar:
 
@@ -187,7 +187,7 @@ git add .
 git commit -m "feat: Faker"
 ```
 
-29) Agrego paginacion con gem pagy:
+28) Agrego paginacion con gem pagy:
     
 - Ir al archivo Gemfile y editar al final donde agrego mis gemas agregadas
 
@@ -199,7 +199,7 @@ git commit -m "feat: Faker"
 bundle
 ```
 
-30) Incluir pagy en controller:
+29) Incluir pagy en controller:
     
 - buscar controller -> ctrl p
 
@@ -211,7 +211,7 @@ incluir bajo Class
 
 - guardar cambios
 
-31) Incluir pagy en application_helper.rb
+30) Incluir pagy en application_helper.rb
     
 - Buscar controller -> ctrl p
 
@@ -221,7 +221,7 @@ incluir bajo Class
 
 esto afectara a toda la app
 
-32) Cambiar en vista index:
+31) Cambiar en vista index:
     
 ctrl p -> tweets_controller.rb
 
@@ -229,7 +229,7 @@ incluir bajo @tweets = Tweet.all (comentar esta linea) #
 
  @pagy, @tweets = pagy(Tweet.all)
 
-33) Agregar helpers adicionales:
+32) Agregar helpers adicionales:
     
 views -> tweets -> index.html.erb
 
