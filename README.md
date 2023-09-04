@@ -119,46 +119,56 @@ git commit -m "mensaje"
 - sync changes o git pull
 
 18) Generar datos con gema faker:
-en gemfile agregar al final comentario
+    
+- en gemfile agregar al final comentario
 
 #Gemas agregadas por mi
 gem 'faker'
 
-guardar
+- guardar
 
 19) Instalar gema, desde terminal 3 ejecutar:
+
+```bash
 bundle
+```
 
-20) Agregar contenido al seed
-en carpeta bd -> seeds.rb
+20) Agregar contenido al seed:
+    
+- en carpeta bd -> seeds.rb
 
-al final del archivo agregar texto:
+- al final del archivo agregar texto:
 puts "Creating tweets..."
 
 escribir accion y logica aqui
 
-guardar
+- guardar
 
 21) Revisar en carpeta migrate los nombres clave: valor asignados
 
 escribirlos igual en la logica del archivo seeds creado con la fecha 2023...
 
 22) Actualizo el seeds.rb
+
+```bash
 rails db:seed
+```
 
 aparecerá el mensaje por consola creado
 Creating tweets...
 
 23) Revisar funcionamiento app
+
 localhost:3000
 
 24) Modificar cantidad de tweets a 500:
     
-en seeds.rb
+- en seeds.rb
 
 10.times do
 
-detener rails server
+- detener rails server
+  
 ```bash
 ctrl c
 ```
@@ -177,7 +187,7 @@ rails s
 
 27) Realizo commit de la app funcionando:
     
-desde termina ejecutar:
+desde terminal ejecutar:
 
 ```bash
 git add .
@@ -225,7 +235,7 @@ esto afectara a toda la app
     
 ctrl p -> tweets_controller.rb
 
-incluir bajo @tweets = Tweet.all (comentar esta linea) #
+- incluir bajo @tweets = Tweet.all (comentar esta linea) #
 
  @pagy, @tweets = pagy(Tweet.all)
 
@@ -233,25 +243,26 @@ incluir bajo @tweets = Tweet.all (comentar esta linea) #
     
 views -> tweets -> index.html.erb
 
-pegar al final del archivo
+- pegar al final del archivo
 
 <%== pagy_nav(@pagy) if @pagy.pages > 1%>
 
-guardar archivo
+- guardar archivo
 
 33) Reiniciar desde terminal rails server para ver funcionamiento de pagy:
 
+```bash
 ctrl c
+```
+```bash
 rails s
-
-34) Pagy funcionando:
+```
+- Pagy funcionando:
     
-FALTA AGREGAR ESTILOS
-
-36) Agrego ID a indice 
+34) Agrego ID a indice 
 _tweet.html.erb
 
-37) Agrego cdn para estilo css bootstrap en:
+35) Agrego cdn para estilo css bootstrap en:
     
 application.html.erb
 
@@ -260,11 +271,11 @@ sobre </head>
 cdn js bootstrap
 sobre </body>
 
-37) Agrego contenedor en html:
+36) Agrego contenedor en html:
     
 application.html.erb
 
-39) Edito la vista _tweet.html.erb:
+37) Edito la vista _tweet.html.erb:
 
 views -> tweets
 
@@ -274,7 +285,7 @@ abajo de dom_id tweet
 
 copio datos especificos del pagina 1 tweet y los agrego a pagina principal de todos
 
-40) Agrego initializer de pagy:
+38) Agrego initializer de pagy:
     
 config -> initializers 
 
@@ -283,14 +294,14 @@ copiar documentaci√≥n de github
 crear archivo pagy.rb
 y pegar initializer de pagy
 
-42) Activar navegacion de bootstrap:
+39) Activar navegacion de bootstrap:
     
 buscar en archivo pagy.rb
 "bootstrap"
 
 y descomento extras de bootstrap
 
-42) Detener el servidor y volver a correr, cada vez que se modifica un archivo initializer
+40) Detener el servidor y volver a correr, cada vez que se modifica un archivo initializer
 
 terminal rails server
 
@@ -298,14 +309,14 @@ terminal rails server
 rails s
 ```
 
-43) Editar vista index para aplicar estilo de paginacion de bootstrap:
+41) Editar vista index para aplicar estilo de paginacion de bootstrap:
 
 views -> tweets -> index-html.erb
 
 aplico formato segun documentación
 pagy_bootstrap_nav
 
-44) Renderizar solo 10 tweets:
+42) Renderizar solo 10 tweets:
     
 en initializer pagy.rb
 
@@ -313,13 +324,13 @@ cambiar 20 por defecto a 10 desactivando comentario
 
 reiniciar rails s para aplicar
 
-45) Creo buscador:
+43) Creo buscador:
     
 eligo un navbar con buscador de bootstrap
 
 en views -> creo carpeta shared -> creo archivo _navbar.html.erb
 
-46) Pegar render en application:
+44) Pegar render en application:
     
 views -> layouts -> application.html.erb
 
