@@ -422,7 +422,7 @@ bajo ApplicationRecord
 
 <br>
 
-44) agrego gema ransack
+#### 44. Agrego gema ransack
 Gemfile
 gem 'ransack'
 
