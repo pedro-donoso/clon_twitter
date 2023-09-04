@@ -2,7 +2,8 @@
 
 
 ### PROCESO
-1. Abrir terminal ubuntu, dentro de la carpeta principal BootcampROR:
+
+#### 1. Abrir terminal ubuntu, dentro de la carpeta principal BootcampROR:
 
 ```bash
 ls
@@ -12,14 +13,14 @@ cd BootcampROR
 ```
 <br>
 
-2. Crear proyecto rails con base de datos postgresql:
+#### 2. Crear proyecto rails con base de datos postgresql:
 
 ```bash
 rails new clon_twitter -d postgresql
 ```
 <br>
 
-3. Ingresar al nuevo proyecto creado:
+#### 3. Ingresar al nuevo proyecto creado:
 
 ```bash
 ls
@@ -29,7 +30,7 @@ cd clon-twitter
 ```
 <br>
 
-4. Crear commmit:
+#### 4. Crear commmit:
 
 ```bash
 git add .
@@ -39,35 +40,35 @@ git commit -m "primer commit"
 ```
 <br>
 
-5. Abrir vscode y cerrar terminal ubuntu:
+#### 5. Abrir vscode y cerrar terminal ubuntu:
 
 ```bash
 code .
 ```
 <br>
 
-6. Crear repositorio en github:
+#### 6. Crear repositorio en github:
 
 ```bash
 git init
 ```
 <br>
 
-7. Inicializar postgresql desde terminal vscode y dejar corriendo (renombrar a terminal postgresql):
+#### 7. Inicializar postgresql desde terminal vscode y dejar corriendo (renombrar a terminal postgresql):
 
 ```bash
 sudo service postgresql start
 ```
 <br>
 
-8. Abrir terminal 2 en vscode y generar base de datos (renombrar a terminal rails server):
+#### 8. Abrir terminal 2 en vscode y generar base de datos (renombrar a terminal rails server):
 
 ```bash
 rails db:create
 ```
 <br>
 
-9. Consideraciones scaffold:
+#### 9. Consideraciones scaffold:
     
 - modelo (Primera letra Mayusculas y palabra en singular)
 
@@ -83,25 +84,25 @@ rails g scaffold Tweet description:text
 
   <br>
 
-10. Revisar carpeta migrate:
+#### 10. Revisar carpeta migrate:
     
 - se genera en la carpeta db, debe contener el formato asignado al scaffold
 
-11. Genero la migracion:
+#### 11. Genero la migracion:
     
 ```bash
 rails db:migrate
 ```
 <br>
 
-12. Revisar routes:
+#### 12. Revisar routes:
     
 - en config -> routes
 debe aparecer resources con modelo en minuscula y plural, tweets
 
 <br>
 
-13. Definir root:
+#### 13. Definir root:
     
 - en routes descomentar y cambiar articles, dejar modelo generado en plural
 root "tweets#index"
@@ -109,7 +110,7 @@ guardar
 
 <br>
 
-14. Dejar corriendo servidor de rails desde terminal 2 y revisar sitio web:
+#### 14. Dejar corriendo servidor de rails desde terminal 2 y revisar sitio web:
     
 ```bash
 rails s
@@ -119,7 +120,7 @@ rails s
   
 <br>
 
-15. Revisar controllers:
+#### 15. Revisar controllers:
     
 en app -> controllers
 aparece controller creado
@@ -127,7 +128,7 @@ tweets_controller.rb
 
 <br>
 
-16. Abrir terminal 3 (renombrar a terminal) y commitear:
+#### 16. Abrir terminal 3 (renombrar a terminal) y commitear:
     
 ```bash
 git add.
@@ -141,7 +142,7 @@ git commit -m "mensaje"
 
   <br>
 
-17. Generar datos con gema faker:
+#### 17. Generar datos con gema faker:
     
 - en gemfile agregar al final comentario
 
@@ -152,14 +153,14 @@ gem 'faker'
 
   <br>
 
-18. Instalar gema, desde terminal 3 ejecutar:
+#### 18. Instalar gema, desde terminal 3 ejecutar:
 
 ```bash
 bundle
 ```
 <br>
 
-19. Agregar contenido al seed:
+#### 19. Agregar contenido al seed:
     
 - en carpeta bd -> seeds.rb
 
@@ -172,13 +173,13 @@ escribir accion y logica aqui
 
   <br>
 
-20. Revisar en carpeta migrate los nombres clave: valor asignados
+#### 20. Revisar en carpeta migrate los nombres clave: valor asignados
 
 escribirlos igual en la logica del archivo seeds creado con la fecha actual...
 
 <br>
 
-21. Actualizo el seeds.rb
+#### 21. Actualizo el seeds.rb
 
 ```bash
 rails db:seed
@@ -189,13 +190,13 @@ Creating tweets...
 
 <br>
 
-22. Revisar funcionamiento app
+#### 22. Revisar funcionamiento app
 
 localhost:3000
 
 <br>
 
-23. Modificar cantidad de tweets a 500:
+#### 23. Modificar cantidad de tweets a 500:
     
 - en seeds.rb
 
@@ -208,7 +209,7 @@ ctrl c
 ```
 <br>
 
-24. Al cambiar la cantidad de datos a 500 debemos resetear la base de datos, desde terminal ejecutar:
+#### 24. Al cambiar la cantidad de datos a 500 debemos resetear la base de datos, desde terminal ejecutar:
 
 ```bash
 rails db:reset
@@ -216,7 +217,7 @@ rails db:reset
 
 <br>
 
-25. Volver a correr servidor de rails desde terminal rails server, ejecutar:
+#### 25. Volver a correr servidor de rails desde terminal rails server, ejecutar:
 
 ```bash
 rails s
@@ -224,7 +225,7 @@ rails s
 
 <br>
 
-26. Realizo commit de la app funcionando:
+#### 26. Realizo commit de la app funcionando:
     
 desde terminal ejecutar:
 
@@ -238,7 +239,7 @@ git commit -m "feat: Faker"
 
 <br>
 
-27. Agrego paginacion con gem pagy:
+#### 27. Agrego paginacion con gem pagy:
     
 - Ir al archivo Gemfile y editar al final donde agrego mis gemas agregadas
 
@@ -252,7 +253,7 @@ bundle
 
 <br>
 
-28. Incluir pagy en controller:
+#### 28. Incluir pagy en controller:
     
 - buscar controller -> ctrl p
 
@@ -266,7 +267,7 @@ incluir bajo Class
 
   <br>
 
-29. Incluir pagy en application_helper.rb
+#### 29. Incluir pagy en application_helper.rb
     
 - Buscar controller -> ctrl p
 
@@ -278,7 +279,7 @@ esto afectara a toda la app
 
 <br>
 
-30. Cambiar en vista index:
+#### 30. Cambiar en vista index:
     
 ctrl p -> tweets_controller.rb
 
@@ -288,7 +289,7 @@ ctrl p -> tweets_controller.rb
 
  <br> 
 
-31. Agregar helpers adicionales:
+#### 31. Agregar helpers adicionales:
     
 views -> tweets -> index.html.erb
 
@@ -300,7 +301,7 @@ views -> tweets -> index.html.erb
 
 <br>
 
-32. Reiniciar desde terminal rails server para ver funcionamiento de pagy:
+#### 32. Reiniciar desde terminal rails server para ver funcionamiento de pagy:
 
 ```bash
 ctrl c
@@ -312,13 +313,13 @@ rails s
 
   <br>
     
-33. Agrego ID a indice
+#### 33. Agrego ID a indice
     
 _tweet.html.erb
 
 <br>
 
-34. Agrego cdn para estilo css bootstrap en:
+#### 34. Agrego cdn para estilo css bootstrap en:
     
 application.html.erb
 
@@ -329,13 +330,13 @@ sobre </body>
 
 <br>
 
-35. Agrego contenedor en html:
+#### 35. Agrego contenedor en html:
     
 application.html.erb
 
 <br>
 
-36. Edito la vista _tweet.html.erb:
+#### 36. Edito la vista _tweet.html.erb:
 
 views -> tweets
 
@@ -347,7 +348,7 @@ copio datos especificos del pagina 1 tweet y los agrego a pagina principal de to
 
 <br>
 
-37. Agrego initializer de pagy:
+#### 37. Agrego initializer de pagy:
     
 config -> initializers 
 
@@ -358,7 +359,7 @@ y pegar initializer de pagy
 
 <br>
 
-38. Activar navegacion de bootstrap:
+#### 38. Activar navegacion de bootstrap:
     
 buscar en archivo pagy.rb
 "bootstrap"
@@ -367,7 +368,7 @@ y descomento extras de bootstrap
 
 <br>
 
-39. Detener el servidor y volver a correr, cada vez que se modifica un archivo initializer
+#### 39. Detener el servidor y volver a correr, cada vez que se modifica un archivo initializer
 
 terminal rails server
 
@@ -378,7 +379,7 @@ rails s
 <br>
 
 
-40. Editar vista index para aplicar estilo de paginacion de bootstrap:
+#### 40. Editar vista index para aplicar estilo de paginacion de bootstrap:
 
 views -> tweets -> index-html.erb
 
@@ -387,7 +388,7 @@ pagy_bootstrap_nav
 
 <br>
 
-41. Renderizar solo 10 tweets:
+#### 41. Renderizar solo 10 tweets:
     
 en initializer pagy.rb
 
@@ -397,7 +398,7 @@ reiniciar rails s para aplicar
 
 <br>
 
-42. Creo buscador:
+#### 42. Creo buscador:
     
 eligo un navbar con buscador de bootstrap
 
@@ -405,7 +406,7 @@ en views -> creo carpeta shared -> creo archivo _navbar.html.erb
 
 <br>
 
-43. Pegar render en application:
+#### 43. Pegar render en application:
     
 views -> layouts -> application.html.erb
 
