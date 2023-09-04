@@ -10,12 +10,14 @@ ls
 ```bash
 cd BootcampROR
 ```
+<br>
 
 2) Crear proyecto rails con base de datos postgresql:
 
 ```bash
 rails new clon_twitter -d postgresql
 ```
+<br>
 
 3) Ingresar al nuevo proyecto creado:
 
@@ -25,6 +27,7 @@ ls
 ```bash
 cd clon-twitter
 ```
+<br>
 
 4) Crear commmit:
 
@@ -34,32 +37,38 @@ git add .
 ```bash
 git commit -m "primer commit"
 ```
+<br>
 
 5) Abrir vscode y cerrar terminal ubuntu:
 
 ```bash
 code .
 ```
+<br>
 
-7) Crear repositorio en github:
+6) Crear repositorio en github:
 
 ```bash
 git init
 ```
+<br>
 
-8) Inicializar postgresql desde terminal vscode y dejar corriendo (renombrar a terminal postgresql):
+7) Inicializar postgresql desde terminal vscode y dejar corriendo (renombrar a terminal postgresql):
 
 ```bash
 sudo service postgresql start
 ```
+<br>
 
-9) Abrir terminal 2 en vscode y generar base de datos (renombrar a terminal rails server):
+8) Abrir terminal 2 en vscode y generar base de datos (renombrar a terminal rails server):
 
 ```bash
 rails db:create
 ```
+<br>
 
-10) Consideraciones scaffold: 
+9) Consideraciones scaffold:
+    
 - modelo (Primera letra Mayusculas y palabra en singular)
 
 - atributos del modelo (clave:valor)
@@ -72,27 +81,30 @@ rails g scaffold Tweet description:text
 
 - userName (si no se define es string)
 
-11) Revisar carpeta migrate:
+  <br>
+
+10) Revisar carpeta migrate:
+    
 - se genera en la carpeta db, debe contener el formato asignado al scaffold
 
-12) Genero la migracion:
+11) Genero la migracion:
     
 ```bash
 rails db:migrate
 ```
 
-13) Revisar routes:
+12) Revisar routes:
     
 - en config -> routes
 debe aparecer resources con modelo en minuscula y plural, tweets
 
-14) Definir root:
+13) Definir root:
     
 - en routes descomentar y cambiar articles, dejar modelo generado en plural
 root "tweets#index"
 guardar
 
-15) Dejar corriendo servidor de rails desde terminal 2 y revisar sitio web:
+14) Dejar corriendo servidor de rails desde terminal 2 y revisar sitio web:
     
 ```bash
 rails s
@@ -100,13 +112,13 @@ rails s
 
 - localhost 3000
 
-16) Revisar controllers:
+15) Revisar controllers:
     
 en app -> controllers
 aparece controller creado
 tweets_controller.rb
 
-17) Abrir terminal 3 (renombrar a terminal) y commitear:
+16) Abrir terminal 3 (renombrar a terminal) y commitear:
     
 ```bash
 git add.
@@ -118,7 +130,7 @@ git commit -m "mensaje"
 
 - sync changes o git pull
 
-18) Generar datos con gema faker:
+17) Generar datos con gema faker:
     
 - en gemfile agregar al final comentario
 
@@ -127,13 +139,13 @@ gem 'faker'
 
 - guardar
 
-19) Instalar gema, desde terminal 3 ejecutar:
+18) Instalar gema, desde terminal 3 ejecutar:
 
 ```bash
 bundle
 ```
 
-20) Agregar contenido al seed:
+19) Agregar contenido al seed:
     
 - en carpeta bd -> seeds.rb
 
@@ -144,7 +156,7 @@ escribir accion y logica aqui
 
 - guardar
 
-21) Revisar en carpeta migrate los nombres clave: valor asignados
+20) Revisar en carpeta migrate los nombres clave: valor asignados
 
 escribirlos igual en la logica del archivo seeds creado con la fecha 2023...
 
